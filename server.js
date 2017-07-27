@@ -2,13 +2,13 @@ const mongo = require('mongodb').MongoClient;
 const client = require('socket.io').listen(4000).sockets;
 
 // Connect to mongo
-mongo.connect('mongodb://localhost:27017/mongoChat', function(err, db) {
+mongo.connect('mongodb://127.0.0.1/mongoChat', function(err, db) {
   if (err) throw err;
 
   console.log('MongoDB connected...');
 
   // Connect to Socket.io
-  client.on('connection', function() {
+  client.on('connection', function(socket) {
     let chat = db.collection('chats');
 
     // Create function to send status
@@ -17,7 +17,7 @@ mongo.connect('mongodb://localhost:27017/mongoChat', function(err, db) {
     }
 
     // Get chats from the mongo collection
-    chat.find.limit(100).sort({
+    chat.find().limit(100).sort({
       _id: 1
     }).toArray(function(err, res) {
       if (err) throw err;
