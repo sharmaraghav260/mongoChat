@@ -1,0 +1,30 @@
+{
+  "name": "mongochat",
+  "version": "1.0.0",
+  "description": "A simple Node.js chat application that uses a MongoDB database to store messages and Socket.io for bi-directional communication.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharmaraghav260/mongoChat.git"
+  },
+  "keywords": [
+    "mongodb",
+    "socket.io",
+    "chat",
+    "app"
+  ],
+  "author": "Raghav Sharma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sharmaraghav260/mongoChat/issues"
+  },
+  "homepage": "https://github.com/sharmaraghav260/mongoChat#readme",
+  "dependencies": {
+    "mongodb": "^2.2.30",
+    "socket.io": "^2.0.3"
+  }
+}
